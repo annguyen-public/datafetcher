@@ -49,7 +49,7 @@ var myInt = setInterval(function () {
   }).on('error', function(e) {
     console.log("Got error: " + e.message);
   });
-}, 100);
+}, 900000);
 
 console.log("ba");
 
