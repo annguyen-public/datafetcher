@@ -32,6 +32,7 @@ app.get('/getNewest/:collection/:skip', function (req, res) {
 });
 
 var myInt = setInterval(function () {
+  console.log("a");
   var http = require('http');
   var options = {
     host: 'ninegagcraper.herokuapp.com',
@@ -48,8 +49,9 @@ var myInt = setInterval(function () {
   }).on('error', function(e) {
     console.log("Got error: " + e.message);
   });
-}, 900000);
+}, 100);
 
+console.log("ba");
 
 var port = process.env.PORT || 3000;
 
