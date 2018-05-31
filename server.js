@@ -49,9 +49,9 @@ var myInt = setInterval(function () {
   }).on('error', function(e) {
     console.log("Got error: " + e.message);
   });
-}, 900000);
+}, 7200000);
 
-console.log("ba");
+console.log("start..");
 
 var port = process.env.PORT || 3000;
 
