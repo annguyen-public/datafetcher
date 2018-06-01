@@ -50,7 +50,7 @@ var myInt = setInterval(function () {
   });
 }, 7200000);
 
-var myInt = setInterval(function () {
+var autoFanpage = setInterval(function () {
   var http = require('http');
   var options = {
     host: 'fanpagevuivui.herokuapp.com',
