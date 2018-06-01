@@ -67,7 +67,7 @@ var autoFanpage = setInterval(function () {
   }).on('error', function(e) {
     console.log("Got error: " + e.message);
   });
-}, 5000);
+}, 7200000);
 
 console.log("start..");
 
