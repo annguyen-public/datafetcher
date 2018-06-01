@@ -32,7 +32,6 @@ app.get('/getNewest/:collection/:skip', function (req, res) {
 });
 
 var myInt = setInterval(function () {
-  console.log("a");
   var http = require('http');
   var options = {
     host: 'ninegagcraper.herokuapp.com',
@@ -50,6 +49,25 @@ var myInt = setInterval(function () {
     console.log("Got error: " + e.message);
   });
 }, 7200000);
+
+var myInt = setInterval(function () {
+  var http = require('http');
+  var options = {
+    host: 'fanpagevuivui.herokuapp.com',
+    port: 80,
+    path: '/updateFanPage'
+  };
+
+  http.get(options, function(res) {
+    console.log("Got response: " + res.statusCode);
+
+    res.on("data", function(chunk) {
+      console.log("BODY: " + chunk);
+    });
+  }).on('error', function(e) {
+    console.log("Got error: " + e.message);
+  });
+}, 5000);
 
 console.log("start..");
 
