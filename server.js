@@ -31,12 +31,12 @@ app.get('/getNewest/:collection/:skip', function (req, res) {
   }); 
 });
 
-var myInt = setInterval(function () {
+var autoScrape = setInterval(function () {
   var http = require('http');
   var options = {
     host: 'ninegagcraper.herokuapp.com',
     port: 80,
-    path: '/'
+    path: '/scrapeNow'
   };
 
   http.get(options, function(res) {
@@ -48,9 +48,10 @@ var myInt = setInterval(function () {
   }).on('error', function(e) {
     console.log("Got error: " + e.message);
   });
-}, 7200000);
+}, 10800000);
 
-var autoFanpage = setInterval(function () {
+
+/*var autoFanpage = setInterval(function () {
   var http = require('http');
   var options = {
     host: 'fanpagevuivui.herokuapp.com',
@@ -67,9 +68,7 @@ var autoFanpage = setInterval(function () {
   }).on('error', function(e) {
     console.log("Got error: " + e.message);
   });
-}, 7200000);
-
-console.log("start..");
+}, 7200000);*/
 
 var port = process.env.PORT || 3000;
 
@@ -78,6 +77,6 @@ var server = app.listen(port, function () {
   var host = server.address().address
   var port = server.address().port
 
-  console.log("Example app listening at http://%s:%s", host, port)
+  console.log("control bot listening at http://%s:%s", host, port)
 
 })
